@@ -424,7 +424,7 @@ kong_apis:
       config.hour: "{{ medium_rate_limit_per_hour }}"
       config.limit_by: credential
     - name: request-size-limiting
-      config.allowed_payload_size: "{{ small_request_size_limit }}"    
+      config.allowed_payload_size: "{{ small_request_size_limit }}"
   - name: readContentState
     uris: "{{ course_service_prefix }}/v1/content/state/read"
     upstream_url: "{{ lms_service_url }}/v1/content/state/read"
@@ -3568,7 +3568,7 @@ kong_apis:
      - {name: 'acl', config.whitelist: 'publicUser'}
      - {name: 'rate-limiting', config.policy: "local", config.hour: "{{ medium_rate_limit_per_hour }}"}
      - {name: 'request-size-limiting', config.allowed_payload_size: "{{ small_request_size_limit }}" }
-     
+
   - name: "experimentcreate"
     uris: "{{ data_service_prefix }}/v1/experiement/create"
     upstream_url: "{{ sunbird_analytics_api_base_url }}/experiment/create"
@@ -3579,9 +3579,9 @@ kong_apis:
      - "{{ statsd_pulgin }}"
      - {name: 'acl', config.whitelist: 'publicUser'}
      - {name: 'rate-limiting', config.policy: "local", config.hour: "{{ medium_rate_limit_per_hour }}"}
-     - {name: 'request-size-limiting', config.allowed_payload_size: "{{ small_request_size_limit }}" }   
+     - {name: 'request-size-limiting', config.allowed_payload_size: "{{ small_request_size_limit }}" }
 
-  - name: "experimentread" 
+  - name: "experimentread"
     uris: "{{ data_service_prefix }}/v1/experiement/get"
     upstream_url: "{{ sunbird_analytics_api_base_url }}/experiment/get"
     strip_uri: true
@@ -3592,7 +3592,7 @@ kong_apis:
      - {name: 'acl', config.whitelist: 'publicUser'}
      - {name: 'rate-limiting', config.policy: "local", config.hour: "{{ medium_rate_limit_per_hour }}"}
      - {name: 'request-size-limiting', config.allowed_payload_size: "{{ small_request_size_limit }}" }
-     
+
   - name: "configRefresh"
     uris: "{{ config_service_prefix }}/v1/refresh"
     upstream_url: "{{ config_service_url }}/config-service/v1/refresh"
@@ -4461,7 +4461,7 @@ kong_apis:
         config.hour: "{{ medium_rate_limit_per_hour }}"
         config.limit_by: credential
       - name: request-size-limiting
-        config.allowed_payload_size: "{{ small_request_size_limit }}"  
+        config.allowed_payload_size: "{{ small_request_size_limit }}"
   - name: courseIssueCertificate
     uris: "{{ course_service_prefix }}/batch/cert/v1/issue"
     upstream_url: "{{ lms_service_url }}/v1/course/batch/cert/issue"
