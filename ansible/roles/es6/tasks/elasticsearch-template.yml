@@ -14,7 +14,7 @@
 
 - name: Install templates without auth
   uri:
-    url: "http://{{es_api_host}}:{{es_api_port}}/_template/{{item | filename}}"
+    url: "http://localhost:{{es_api_port}}/_template/{{item | filename}}"
     method: PUT
     status_code: 200
     body_format: json
@@ -26,7 +26,7 @@
 
 - name: Install templates with auth
   uri:
-    url: "http://{{es_api_host}}:{{es_api_port}}/_template/{{item | filename}}"
+    url: "http://localhost:{{es_api_port}}/_template/{{item | filename}}"
     method: PUT
     status_code: 200
     user: "{{es_api_basic_auth_username}}"
