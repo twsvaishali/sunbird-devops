@@ -61,7 +61,7 @@ listen_address: 127.0.0.1
 broadcast_address: {{hostvars[inventory_hostname]['ansible_default_ipv4']['address']}}
 broadcast_rpc_address: {{hostvars[inventory_hostname]['ansible_default_ipv4']['address']}}
 {% else %}
-listen_address: {{cassandra_listen_address}}
+listen_address: 127.0.0.1
 broadcast_address: {{cassandra_broadcast_address}}
 broadcast_rpc_address: {{cassandra_broadcast_rpc_address}}
 {% endif %}
